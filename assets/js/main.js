@@ -10,11 +10,12 @@ function signup(formObj) {
 
 	var onSignupComplete = function(error) {
 		if (error) {
-			print("Error");
+			console.log("Error");
 		} else {
-			print("Thanks for signing up");
+			console.log("Thanks for signing up");
 		}
 	  };
+
 	// Store emails to firebase
 	var myFirebaseRef = new Firebase("https://solucoesjuridicasbr-b05c3.firebaseio.com/signups");
 	myFirebaseRef.push({
