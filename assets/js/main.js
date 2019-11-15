@@ -4,15 +4,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-var onSignupComplete = function(error) {
-	if (error) {
-		print("Error");
-	} else {
-		print("Thanks for signing up");
-	}
-  };
+
 
 function signup(formObj) {
+
+	var onSignupComplete = function(error) {
+		if (error) {
+			print("Error");
+		} else {
+			print("Thanks for signing up");
+		}
+	  };
 	// Store emails to firebase
 	var myFirebaseRef = new Firebase("https://solucoesjuridicasbr-b05c3.firebaseio.com/signups");
 	myFirebaseRef.push({
