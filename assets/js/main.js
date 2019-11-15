@@ -4,6 +4,16 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function signup(formObj) {
+	// Store emails to firebase
+	var myFirebaseRef = new Firebase("https://solucoesjuridicasbr-b05c3.firebaseio.com/signups");
+	myFirebaseRef.push({
+	  email: formObj.email.value,
+	}, onSignupComplete);
+	signupBtn.disabled = true;
+	return false;
+}
+
 (function() {
 
 	"use strict";
@@ -148,9 +158,14 @@
 						$submit.disabled = true;
 
 					// Process form.
+
+
 					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
 					// but there's enough here to piece together a working AJAX submission call that does.
 						window.setTimeout(function() {
+
+							// Sign Up
+							signup($form);
 
 							// Reset form.
 								$form.reset();
